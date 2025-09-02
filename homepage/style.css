@@ -29,7 +29,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding-right: 1.5vw;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   z-index: 1000;
 }
 
@@ -66,22 +66,36 @@ nav ul li a:hover {
   justify-content: center;
 }
 .hero-part img {
+  margin-top: 150px;
   max-width: 100%;
   width: clamp(250px, 60vw, 800px); /* responsive scaling */
   height: auto;
   filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.5));
+   animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 .bg-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 20rem;
   font-weight: 900;
   color: rgb(203, 201, 201);
   font-style: italic;
   z-index: -1;
-  font-size: clamp(4rem, 28vw, 18rem);
+  font-size: clamp(4rem, 30vw, 18rem);
 }
 
 .hero-cards {
@@ -176,7 +190,6 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 30px;
   max-width: 1200px;
   margin: auto;
@@ -257,12 +270,7 @@ footer {
   }
 }
 
-@media (max-width: 1200px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+
 
 @media (max-width: 800px) {
   nav ul {
@@ -275,6 +283,7 @@ footer {
     width: 100%;
     transition: all 0.3s ease;
     background-color: #0d1117;
+    background: linear-gradient(to right,rgb(23, 21, 21),rgb(38, 38, 59));
   }
 
   nav ul li {
@@ -320,5 +329,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+
+}
+
+
+@media (max-width: 1200px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
